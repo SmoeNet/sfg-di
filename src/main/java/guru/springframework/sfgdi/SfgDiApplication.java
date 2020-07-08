@@ -17,9 +17,8 @@ public class SfgDiApplication {
 		
 		MyController myController = (MyController) ctx.getBean("myController");
 		
-		String greeting = myController.sayHello();
-		
-		System.out.println(greeting);
+		System.out.println("------- Primary Bean");
+		System.out.println(myController.sayHello());
 		
 		System.out.println("------- Property");
 		PropertyInjectedController propertyInjectedController = (PropertyInjectedController) ctx.getBean("propertyInjectedController");
@@ -29,7 +28,7 @@ public class SfgDiApplication {
 		SetterInjectedController setterInjectedController = (SetterInjectedController) ctx.getBean("setterInjectedController");
 		System.out.println(setterInjectedController.getGreeting());
 
-		System.out.println("------- Property");
+		System.out.println("------- Constructor");
 		ConstructorInjectedController constructorInjectedController = (ConstructorInjectedController) ctx.getBean("constructorInjectedController");
 		System.out.println(constructorInjectedController.getGreeting());
 	}
